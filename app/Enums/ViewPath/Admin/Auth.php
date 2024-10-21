@@ -4,5 +4,5 @@ namespace App\Enums\ViewPath\Admin;
 
 enum Auth
 {
-    const ADMIN_LOGIN = 'admin-views.auth.login';
+    const ADMIN_LOGIN = 'admin.auth.login';
 }
