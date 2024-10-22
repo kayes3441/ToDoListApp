@@ -3,7 +3,7 @@
 @section('body')
     <div class="row">
         <div class="col-md-12 d-flex gap-3">
-            <h2>Task List</h2>
+            <h2>Employee List</h2>
         </div>
     </div>
     <div class="table-responsive">

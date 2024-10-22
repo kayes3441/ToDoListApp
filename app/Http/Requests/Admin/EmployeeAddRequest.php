@@ -25,7 +25,7 @@ class EmployeeAddRequest extends FormRequest
         return [
             'name' => 'required',
             'role' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:admins,email',
             'password' => 'required|min:8',
         ];
     }
@@ -34,6 +34,7 @@ class EmployeeAddRequest extends FormRequest
     {
         return [
             'email.required' => 'Email is required',
+            'email.unique' => 'Email already taken',
             'role.required' => 'Role is required',
             'password.required' => 'password is required',
             'password.min' => 'minimum password is 8 characters',

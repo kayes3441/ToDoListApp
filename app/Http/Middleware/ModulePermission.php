@@ -2,7 +2,7 @@
 
 namespace App\Http\Middleware;
 
-
+ 
 use App\Trait\ModulePermissionTrait;
 use Brian2694\Toastr\Facades\Toastr;
 use Closure;

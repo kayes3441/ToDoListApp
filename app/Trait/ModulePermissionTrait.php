@@ -11,7 +11,7 @@ trait ModulePermissionTrait
         if (auth('admins')->user()->admin_role_id == 1) {
             return true;
         }
-        if (isset($permission) && $userRole->status == 1 && in_array($moduleName, (array)json_decode($permission)) == true) {
+        if (isset($permission) && $userRole->status == 1 && in_array($moduleName, $permission) == true) {
             return true;
         }
 

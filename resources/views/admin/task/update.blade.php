@@ -30,8 +30,8 @@
                 <div class="mb-3">
                     <label for="role" class="form-label">Assign To</label>
                     <select class="form-control" id="role" name="assign_to">
-                        @foreach($allEmployee as $key=>$employee)
-                            <option value=""  disabled>-- select --</option>
+                    <option value=""  disabled>-- select --</option>
+                    @foreach($allEmployee as $key=>$employee)
                             <option value="{{$employee['id']}}"{{$task['assign_to'] == $employee['id'] ? 'selected':''}}>{{$employee['name']}}</option>
                         @endforeach
                     </select>
