@@ -2,8 +2,9 @@
 
 namespace App\Http\Middleware;
 
-use App\CPU\Helpers;
+
 use App\Trait\ModulePermissionTrait;
+use Brian2694\Toastr\Facades\Toastr;
 use Closure;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -22,7 +23,7 @@ class ModulePermission
         if ($this->modulePermissionCheck($module)) {
             return $next($request);
         }
-        //->with('Access Denied')
+        Toastr::info('Access Denied');
         return back();
     }
 

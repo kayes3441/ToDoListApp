@@ -1,5 +1,5 @@
 @extends('layout.admin.master')
-@section('title')Dashboard @endsection
+@section('title')Add Task @endsection
 @section('body')
 <div class="row">
     <div class="col-md-12">

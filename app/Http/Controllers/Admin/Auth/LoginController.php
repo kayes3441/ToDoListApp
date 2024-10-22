@@ -69,7 +69,7 @@ class LoginController extends BaseController
         return redirect(RouteServiceProvider::LOGIN);
     }
 
-    private function StoreDataForMasterAdmin(): Void
+    private function storeDataForMasterAdmin(): Void
     {
         $adminRole = [
             'role' => 'Master Admin',
@@ -81,7 +81,7 @@ class LoginController extends BaseController
             'password' => '12345678',
         ];
         $this->adminRole->create($this->adminService->getAdminRoleData(request: $adminRole));
-        $this->admin->create($this->adminService->getAdminData(request: $adminData,roleId: 1));
+        $this->admin->create($this->adminService->getAddData(request: $adminData,roleId: 1));
 
     }
 

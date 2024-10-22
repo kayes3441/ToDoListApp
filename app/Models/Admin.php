@@ -9,11 +9,19 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class Admin extends Authenticatable
 {
     use HasFactory;
+
     protected $fillable = [
         'name',
         'email',
         'password',
+        'status',
         'admin_role_id'
+    ];
+    protected $casts = [
+        'name'=>'string',
+        'email'=>'string',
+        'status'=>'integer',
+        'admin_role_id'=>'integer',
     ];
 
     /**

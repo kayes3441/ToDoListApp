@@ -18,12 +18,16 @@
         <hr class="bg-light">
         <a href="{{route('admin.dashboard.index')}}">Dashboard</a>
         <a href="#submenu1" data-bs-toggle="collapse" class="dropdown-toggle">Task</a>
-
         <ul class="collapse" id="submenu1">
             <li><a href="{{route('admin.task.index')}}" class="pl-4">Add Task</a></li>
             <li><a href="{{route('admin.task.list',['status'=>'all'])}}" class="pl-4"> All</a></li>
             <li><a href="{{route('admin.task.list',['status'=>'pending'])}}" class="pl-4">Pending</a></li>
             <li><a href="{{route('admin.task.list',['status'=>'complete'])}}" class="pl-4">Complete</a></li>
+        </ul>
+        <a href="#submenu2" data-bs-toggle="collapse" class="dropdown-toggle">Employee</a>
+        <ul class="collapse" id="submenu2">
+            <li><a href="{{route('admin.employee.index')}}" class="pl-4">Add Employee</a></li>
+            <li><a href="{{route('admin.employee.list')}}" class="pl-4"> All Employee</a></li>
         </ul>
         <a href="{{route('admin.logout')}}">Logout</a>
     </div>

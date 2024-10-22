@@ -1,5 +1,5 @@
 @extends('layout.admin.master')
-@section('title')Dashboard @endsection
+@section('title')Task List @endsection
 @section('body')
     <div class="row">
         <form action="{{route('admin.task.list',['status'=>request('status')])}}" id="form-data" method="GET">
@@ -35,8 +35,8 @@
                         <td>{{$task['title']}}</td>
                         <td>{{$task['description']}}</td>
                         <td>{{$task->assignTo?->name}}</td>
-                        <td>{{date('d M Y h:i A',strtotime($task['start_date']))}}</td>
-                        <td>{{date('d M Y h:i A',strtotime($task['end_date']))}}</td>
+                        <td>{{date('d M Y',strtotime($task['start_date']))}}</td>
+                        <td>{{date('d M Y',strtotime($task['end_date']))}}</td>
                         <td>
                             <span class="{{$task['status'] == 0 ? 'text-danger': 'text-success'}}">
                                 {{$task['status'] == 0 ? 'Pending' : 'Complete'}}

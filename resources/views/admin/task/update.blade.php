@@ -67,10 +67,10 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="role" class="form-label">Assign To</label>
+                    <label for="role" class="form-label">Status</label>
                     <select class="form-control" id="role" name="status">
-                        <option value="1">Complete</option>
-                        <option value="0">Pending</option>
+                        <option value="0" {{$task['status'] == 0 ? 'selected' : ''}}>Pending</option>
+                        <option value="1" {{$task['status'] == 1 ? 'selected' : ''}}>Complete</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Update</button>
