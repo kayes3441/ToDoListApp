@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('admins', function (Blueprint $table) {
+        Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->integer('admin_role_id');
-            $table->rememberToken();
+            $table->string('title');
+            $table->text('description');
+            $table->tinyInteger('assign_to');
+            $table->tinyInteger('priority')->default(0);
+            $table->string('start_date');
+            $table->string('end_date');
             $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('admins');
+        Schema::dropIfExists('tasks');
     }
 };

@@ -11,6 +11,7 @@ use App\Models\AdminRole;
 use App\Providers\RouteServiceProvider;
 use App\Services\AdminService;
 use App\Services\LoginService;
+use Brian2694\Toastr\Facades\Toastr ;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\RedirectResponse;
@@ -37,6 +38,7 @@ class LoginController extends BaseController
 
     protected function getView():View|RedirectResponse
     {
+
         if (Auth::guard('admins')->check()) {
             return redirect()->route('admin.dashboard.index');
         }
@@ -52,18 +54,18 @@ class LoginController extends BaseController
         $admin = $this->admin->where('email', $request['email'])->first();
         if (isset($admin)) {
             if ($this->loginService->isLoginSuccessful($request['email'], $request['password'])) {
-                flash()->success('login successfully');
+                Toastr::success('login successfully');
                 return redirect(Dashboard::DASHBOARD_URL);
             }
         }
-        flash()->warning('credentials not matched!!!!!');
+        Toastr::warning('credentials not matched!!!!!');
         return redirect()->back()->withInput($request->only('email','password'));
     }
 
     public function logout(): RedirectResponse
     {
         $this->loginService->logout();
-        flash()->success('logout successfully');
+        Toastr::success('logout successfully');
         return redirect(RouteServiceProvider::LOGIN);
     }
 

@@ -1,4 +1,3 @@
-<!-- resources/views/login.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
-    <link href="{{ asset('public/assets/css/bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/css/login.css') }}" rel="stylesheet">
+    <link href="{{ dynamicAsset('public/assets/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ dynamicAsset('public/assets/css/login.css') }}" rel="stylesheet">
+    <link href="{{ dynamicAsset('public/assets/css/toastr.css') }}" rel="stylesheet">
 </head>
 <body>
 
@@ -56,8 +56,12 @@
             </div>
         </div>
     </div>
+</div>
 
-    <script src="{{ asset('public/assets/js/jquery-3.7.1.min.js') }}"></script>
-    <script src="{{ asset('public/assets/js/login.js') }}"></script>
+
+<script src="{{ dynamicAsset('public/assets/js/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ dynamicAsset('public/assets/js/toastr.js') }}"></script>
+    <script src="{{ dynamicAsset('public/assets/js/login.js') }}"></script>
+{!!\Brian2694\Toastr\Facades\Toastr::message() !!}
 </body>
 </html>
